@@ -14,6 +14,7 @@
   --yellow: #eed49f;
   --teal: #8bd5ca;
   --lavender: #c6a0f6;
+  --highlight: #c6a0f6; /* Using lavender for highlight, matches theme */
 }
 
 body {
@@ -21,16 +22,18 @@ body {
   background-color: var(--mantle);
   color: var(--text);
   margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 
 .social-links img {
-  filter: invert(70%) sepia(50%) saturate(350%) hue-rotate(190deg) brightness(90%);
+  filter: invert(70%) sepia(50%) saturate(350%) hue-rotate(190deg)
+    brightness(90%);
   transition: filter 0.3s ease;
 }
 
 .social-links img:hover {
-  filter: invert(80%) sepia(40%) saturate(500%) hue-rotate(150deg) brightness(95%);
+  filter: invert(80%) sepia(40%) saturate(500%) hue-rotate(150deg)
+    brightness(95%);
 }
 
 a {
@@ -103,4 +106,48 @@ input:focus,
 textarea:focus {
   outline: none;
   border-color: var(--blue);
+}
+
+/* Text selection highlight */
+::selection {
+  background-color: var(--highlight);
+  color: var(--crust);
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+.left-column {
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.right-column {
+  flex: 2;
+  background-color: var(--crust);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  align-self: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.profile_pic {
+  width: 100%;
+  height: auto;
+  border-radius: 10%;
+  border: 2px solid var(--blue);
 }
