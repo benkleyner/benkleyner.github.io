@@ -1,0 +1,106 @@
+:root {
+  --text: #cad3f5;
+  --subtext: #b8c0e0;
+  --overlay: #a5adcb;
+  --surface: #939ab7;
+  --base: #6e738d;
+  --mantle: #363a4f;
+  --crust: #24273a;
+
+  --blue: #8aadf4;
+  --green: #a6da95;
+  --peach: #f5a97f;
+  --red: #ed8796;
+  --yellow: #eed49f;
+  --teal: #8bd5ca;
+  --lavender: #c6a0f6;
+}
+
+body {
+  font-family: "Cascadia Mono PL", monospace;
+  background-color: var(--mantle);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+.social-links img {
+  filter: invert(70%) sepia(50%) saturate(350%) hue-rotate(190deg) brightness(90%);
+  transition: filter 0.3s ease;
+}
+
+.social-links img:hover {
+  filter: invert(80%) sepia(40%) saturate(500%) hue-rotate(150deg) brightness(95%);
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--teal);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--lavender);
+}
+
+button {
+  background-color: var(--blue);
+  color: var(--crust);
+  border: none;
+  padding: 10px 20px;
+  font-family: "Cascadia Mono PL", monospace;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--teal);
+}
+
+code,
+pre {
+  background-color: var(--base);
+  color: var(--yellow);
+  font-family: "Cascadia Mono PL", monospace;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+header,
+footer {
+  background-color: var(--crust);
+  color: var(--subtext);
+  padding: 20px;
+  text-align: center;
+}
+
+section {
+  margin: 20px;
+  padding: 20px;
+  background-color: var(--mantle);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea {
+  background-color: var(--base);
+  color: var(--text);
+  border: 1px solid var(--overlay);
+  padding: 10px;
+  font-family: "Cascadia Mono PL", monospace;
+  border-radius: 5px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+}
