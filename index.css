@@ -261,6 +261,7 @@ body {
   border-radius: 20px;
   display: inline-block;
   transition: all 0.3s ease;
+  border: 1px solid var(--teal);
 }
 
 .pill:hover {
