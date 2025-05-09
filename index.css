@@ -14,7 +14,7 @@
   --yellow: #eed49f;
   --teal: #8bd5ca;
   --lavender: #c6a0f6;
-  --highlight: #c6a0f6; /* Using lavender for highlight, matches theme */
+  --highlight: #8bd5ca;
 }
 
 body {
@@ -32,8 +32,8 @@ body {
 }
 
 .social-links img:hover {
-  filter: invert(80%) sepia(40%) saturate(500%) hue-rotate(150deg)
-    brightness(95%);
+  filter: brightness(0) saturate(100%) invert(86%) sepia(14%) saturate(699%)
+    hue-rotate(114deg) brightness(92%) contrast(93%);
 }
 
 a {
@@ -108,7 +108,6 @@ textarea:focus {
   border-color: var(--blue);
 }
 
-/* Text selection highlight */
 ::selection {
   background-color: var(--highlight);
   color: var(--crust);
@@ -120,6 +119,7 @@ body {
   padding: 2rem;
   gap: 2rem;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .left-column {
@@ -129,6 +129,9 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+  position: fixed;
+  height: calc(100vh - 4rem);
+  width: 300px;
 }
 
 .right-column {
@@ -136,6 +139,10 @@ body {
   background-color: var(--crust);
   border-radius: 10px;
   padding: 1.5rem;
+  margin-left: calc(300px + 2rem);
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .social-links {
@@ -150,4 +157,130 @@ body {
   height: auto;
   border-radius: 10%;
   border: 2px solid var(--blue);
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.experience-tile {
+  display: block;
+  background-color: var(--crust);
+  border: 1px solid var(--mantle);
+  border-radius: 8px;
+  padding: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-tile::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--blue);
+  transition: background-color 0.3s ease;
+}
+
+.experience-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.experience-tile:hover::before {
+  background-color: var(--teal);
+}
+
+.experience-header {
+  margin-bottom: 0.8rem;
+}
+
+.experience-tile h3 {
+  margin: 0 0 0.3rem 0;
+  color: var(--lavender);
+}
+
+.experience-tile h4 {
+  margin: 0;
+  color: var(--overlay);
+  font-weight: normal;
+}
+
+.experience-date {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background-color: var(--base);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--subtext);
+}
+
+.experience-tile p {
+  margin: 0.8rem 0 1.2rem 0;
+}
+
+/* Tech pills styling */
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.pill {
+  background-color: var(--mantle);
+  color: var(--teal);
+  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.pill:hover {
+  background-color: var(--teal);
+  color: var(--crust);
+}
+
+/* CV Link styling */
+.cv-link-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.full-cv {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--blue);
+  color: var(--crust);
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 0.5rem;
+}
+
+.full-cv:hover {
+  background-color: var(--teal);
+  color: var(--crust);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cv-icon {
+  font-size: 1.2rem;
 }
