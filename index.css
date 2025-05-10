@@ -19,10 +19,17 @@
 
 body {
   font-family: "Cascadia Mono PL", monospace;
+  font-size: 16px;
   background-color: var(--mantle);
   color: var(--text);
   margin: 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  gap: 2rem;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .social-links img {
@@ -123,13 +130,49 @@ textarea:focus {
   color: var(--crust);
 }
 
-body {
+.right-column p {
+  color: var(--text);
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.quick-navigate {
   display: flex;
-  flex-direction: row;
-  padding: 2rem;
-  gap: 2rem;
-  min-height: 100vh;
-  overflow: hidden;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quick-navigate a {
+  color: var(--text);
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  position: relative;
+  padding-left: 0;
+  display: block;
+}
+
+.quick-navigate a:hover {
+  color: var(--teal);
+  transform: translateX(5px);
+}
+
+.quick-navigate a.active {
+  color: var(--teal);
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+.quick-navigate a::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.quick-navigate a.active::before {
+  opacity: 1;
 }
 
 .left-column {
@@ -295,6 +338,11 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.cv-icon {
-  font-size: 1.2rem;
+.position {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.left-column h3 {
+  margin-top: 0;
 }

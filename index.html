@@ -5,12 +5,24 @@
     <title>Benjamin Kleyner</title>
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+    </style>
   </head>
   <body>
     <div class="left-column">
       <h1>Benjamin Kleyner</h1>
-      <h2>Full-Stack Software Engineer</h2>
+      <h2 class="position">Software Engineer</h2>
       <h3><a href="mailto:benkleyner@cmu.edu">benkleyner@cmu.edu</a></h3>
+      <div class="quick-navigate">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+      </div>
       <img class="profile_pic" src="profilepic.jpeg" alt="Benjamin Kleyner" />
       <div class="social-links">
         <a href="https://github.com/benkleyner" alt="GitHub" target="_blank">
@@ -26,7 +38,7 @@
       </div>
     </div>
     <div class="right-column">
-      <h2>About</h2>
+      <h2 id="about">About</h2>
       <p>
         I am a software engineer with a passion for building scalable and
         efficient applications. I have experience in various programming
@@ -48,7 +60,7 @@
         and Formula 1. I am an avid Manchester United fan and have watched every
         game for the last 8 seasons.
       </p>
-      <h2>Experience</h2>
+      <h2 id="experience">Experience</h2>
       <div class="experience-container">
         <a
           href="https://www.amazon.com/aws"
@@ -94,10 +106,78 @@
       </div>
       <div class="cv-link-container">
         <a href="resume.pdf" class="full-cv" target="_blank">
-          <span class="cv-icon">📄</span>
           <span>View Full Resume</span>
         </a>
       </div>
+
+      <h2 id="projects">Projects</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in
+      </p>
+      <h2 id="education">Education</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in
+      </p>
     </div>
+    <script>
+      const sections = document.querySelectorAll(".right-column > h2[id]");
+      const links = document.querySelectorAll(".quick-navigate a");
+      const rightColumn = document.querySelector(".right-column");
+
+      function updateActiveLink() {
+        const scrollTop = rightColumn.scrollTop;
+        let activeSection = null;
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - rightColumn.offsetTop;
+
+          if (scrollTop >= sectionTop - 50) {
+            activeSection = section;
+          }
+        });
+
+        if (!activeSection) {
+          activeSection = sections[0];
+        }
+
+        links.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${activeSection.id}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      rightColumn.addEventListener("scroll", updateActiveLink);
+
+      links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const href = link.getAttribute("href");
+          const targetId = href.slice(1);
+          const targetEl = document.getElementById(targetId);
+
+          if (targetEl) {
+            links.forEach((l) => l.classList.remove("active"));
+            link.classList.add("active");
+
+            const sectionTop = targetEl.offsetTop - rightColumn.offsetTop;
+            rightColumn.scrollTo({
+              top: sectionTop,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      updateActiveLink();
+    </script>
   </body>
 </html>
