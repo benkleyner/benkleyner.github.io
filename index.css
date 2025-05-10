@@ -36,6 +36,9 @@ body {
   filter: invert(70%) sepia(50%) saturate(350%) hue-rotate(190deg)
     brightness(90%);
   transition: filter 0.3s ease;
+  -webkit-transition: filter 0.3s ease;
+  -moz-transition: filter 0.3s ease;
+  -o-transition: filter 0.3s ease;
 }
 
 .social-links img:hover {
@@ -91,6 +94,8 @@ pre {
   font-family: "Cascadia Mono PL", monospace;
   padding: 5px;
   border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
 }
 
 header,
@@ -107,6 +112,10 @@ section {
   background-color: var(--mantle);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 input,
@@ -117,6 +126,8 @@ textarea {
   padding: 10px;
   font-family: "Cascadia Mono PL", monospace;
   border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
 }
 
 input:focus,
@@ -126,6 +137,11 @@ textarea:focus {
 }
 
 ::selection {
+  background-color: var(--highlight);
+  color: var(--crust);
+}
+
+::-moz-selection {
   background-color: var(--highlight);
   color: var(--crust);
 }
@@ -146,6 +162,9 @@ textarea:focus {
   color: var(--text);
   font-size: 1.2rem;
   transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   position: relative;
   padding-left: 0;
   display: block;
@@ -154,6 +173,10 @@ textarea:focus {
 .quick-navigate a:hover {
   color: var(--teal);
   transform: translateX(5px);
+  -webkit-transform: translateX(5px);
+  -moz-transform: translateX(5px);
+  -ms-transform: translateX(5px);
+  -o-transform: translateX(5px);
 }
 
 .quick-navigate a.active {
@@ -169,6 +192,9 @@ textarea:focus {
   color: var(--teal);
   opacity: 0;
   transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
 }
 
 .quick-navigate a.active::before {
@@ -196,6 +222,8 @@ textarea:focus {
   height: calc(100vh - 4rem);
   overflow-y: auto;
   box-sizing: border-box;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
 }
 
 .social-links {
@@ -210,6 +238,8 @@ textarea:focus {
   height: auto;
   border-radius: 10%;
   border: 2px solid var(--blue);
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
 }
 
 .experience-container {
@@ -234,6 +264,11 @@ textarea:focus {
   overflow: hidden;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .experience-tile::before {
@@ -245,6 +280,9 @@ textarea:focus {
   height: 100%;
   background-color: var(--blue);
   transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
 }
 
 .experience-tile:hover {
@@ -253,6 +291,10 @@ textarea:focus {
   -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   text-decoration: none !important;
+  -webkit-transform: translateY(-3px);
+  -moz-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  -o-transform: translateY(-3px);
 }
 
 .experience-tile:hover::before {
@@ -283,6 +325,8 @@ textarea:focus {
   border-radius: 4px;
   font-size: 0.9rem;
   color: var(--subtext);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
 }
 
 .experience-tile p {
@@ -305,6 +349,11 @@ textarea:focus {
   display: inline-block;
   transition: all 0.3s ease;
   border: 1px solid var(--teal);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .pill:hover {
@@ -329,6 +378,13 @@ textarea:focus {
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   gap: 0.5rem;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .full-cv:hover {
@@ -336,6 +392,12 @@ textarea:focus {
   color: var(--crust);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .position {
@@ -378,11 +440,19 @@ textarea:focus {
   border: 3px solid var(--crust);
   border-radius: 50%;
   z-index: 1;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
 }
 
 .semester-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 1rem;
   background-color: var(--mantle);
@@ -391,6 +461,11 @@ textarea:focus {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-left: 1rem;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .semester-header:hover {
@@ -404,7 +479,12 @@ textarea:focus {
 }
 
 .semester-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -422,11 +502,18 @@ textarea:focus {
   color: var(--overlay);
   font-size: 1.2rem;
   transition: transform 0.3s ease;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -moz-transition: -moz-transform 0.3s ease;
+  -o-transition: -o-transform 0.3s ease;
 }
 
 .semester-header.active .expand-icon {
   transform: rotate(180deg);
   color: var(--teal);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
 }
 
 .semester-content {
@@ -434,11 +521,17 @@ textarea:focus {
   overflow: hidden;
   transition: max-height 0.4s ease-out;
   margin-left: 1rem;
+  -webkit-transition: max-height 0.4s ease-out;
+  -moz-transition: max-height 0.4s ease-out;
+  -o-transition: max-height 0.4s ease-out;
 }
 
 .semester-content.expanded {
   max-height: 1000px;
   transition: max-height 0.6s ease-in;
+  -webkit-transition: max-height 0.6s ease-in;
+  -moz-transition: max-height 0.6s ease-in;
+  -o-transition: max-height 0.6s ease-in;
 }
 
 .courses-list {
@@ -447,15 +540,41 @@ textarea:focus {
   border: 1px solid var(--overlay);
   border-top: none;
   border-radius: 0 0 8px 8px;
+  -webkit-border-radius: 0 0 8px 8px;
+  -moz-border-radius: 0 0 8px 8px;
 }
 
 .course-item {
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--overlay);
+  display: block;
+  overflow: hidden;
 }
 
 .course-item:last-child {
   border-bottom: none;
+}
+
+.course-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  margin-bottom: 0.3rem;
+}
+
+.course-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
 }
 
 .course-code {
@@ -471,7 +590,7 @@ textarea:focus {
 .course-credits {
   color: var(--subtext);
   font-size: 0.9rem;
-  float: right;
+  white-space: nowrap;
 }
 
 .course-description {
@@ -489,6 +608,8 @@ textarea:focus {
   background-color: var(--base);
   border-radius: 6px;
   text-align: center;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
 }
 
 .gpa-label {
@@ -498,4 +619,28 @@ textarea:focus {
 .gpa-value {
   color: var(--green);
   font-weight: bold;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .semester-header {
+    -webkit-transform: translateZ(0);
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .semester-header,
+  .semester-title,
+  .course-header,
+  .course-main {
+    display: -ms-flexbox;
+  }
+}
+
+@-moz-document url-prefix() {
+  .semester-header,
+  .semester-title,
+  .course-header,
+  .course-main {
+    display: -moz-box;
+  }
 }
