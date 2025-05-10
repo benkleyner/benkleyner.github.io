@@ -346,3 +346,156 @@ textarea:focus {
 .left-column h3 {
   margin-top: 0;
 }
+
+.education-section {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.education-section::before {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  top: 0;
+  bottom: 1rem;
+  width: 2px;
+  background-color: var(--overlay);
+}
+
+.semester-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.semester-item::before {
+  content: "";
+  position: absolute;
+  left: -1.45rem;
+  top: 0.6rem;
+  width: 12px;
+  height: 12px;
+  background-color: var(--blue);
+  border: 3px solid var(--crust);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.semester-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--mantle);
+  border: 1px solid var(--overlay);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+}
+
+.semester-header:hover {
+  background-color: var(--base);
+  border-color: var(--blue);
+}
+
+.semester-header.active {
+  background-color: var(--base);
+  border-color: var(--teal);
+}
+
+.semester-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.semester-name {
+  font-weight: bold;
+  color: var(--text);
+}
+
+.semester-year {
+  font-size: 0.9rem;
+  color: var(--subtext);
+}
+
+.expand-icon {
+  color: var(--overlay);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.semester-header.active .expand-icon {
+  transform: rotate(180deg);
+  color: var(--teal);
+}
+
+.semester-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  margin-left: 1rem;
+}
+
+.semester-content.expanded {
+  max-height: 1000px;
+  transition: max-height 0.6s ease-in;
+}
+
+.courses-list {
+  padding: 1rem;
+  background-color: var(--mantle);
+  border: 1px solid var(--overlay);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.course-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--overlay);
+}
+
+.course-item:last-child {
+  border-bottom: none;
+}
+
+.course-code {
+  color: var(--teal);
+  font-weight: bold;
+}
+
+.course-name {
+  color: var(--text);
+  margin-left: 0.5rem;
+}
+
+.course-credits {
+  color: var(--subtext);
+  font-size: 0.9rem;
+  float: right;
+}
+
+.course-description {
+  font-size: 0.95rem;
+  color: var(--subtext);
+  margin-top: 0.3rem;
+  padding-left: 2rem;
+  display: block;
+  clear: both;
+}
+
+.gpa-info {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: var(--base);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.gpa-label {
+  color: var(--subtext);
+}
+
+.gpa-value {
+  color: var(--green);
+  font-weight: bold;
+}
