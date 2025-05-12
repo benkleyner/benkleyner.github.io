@@ -111,12 +111,88 @@
       </div>
 
       <h2 id="projects">Projects</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in
-      </p>
+      <div class="projects-container">
+        <div class="project-tile">
+          <div class="project-header">
+            <h3>Tartan Hacks 2025: EmBrnt</h3>
+            <div class="project-date">February 2025</div>
+          </div>
+
+          <div class="project-pdf-container">
+            <object class="pdf-viewer" data="embrnt.pdf" type="application/pdf">
+              <div class="pdf-fallback">
+                <p>
+                  It appears your browser doesn't support embedded PDFs. You can
+                  <a href="string-matching-analysis.pdf" target="_blank"
+                    >download the PDF</a
+                  >
+                  instead.
+                </p>
+              </div>
+            </object>
+            <div class="pdf-controls">
+              <button id="prev-page" class="pdf-nav-button">❮ Previous</button>
+              <div class="pdf-page-info">
+                <span id="current-page">1</span> /
+                <span id="total-pages">12</span>
+              </div>
+              <button id="next-page" class="pdf-nav-button">Next ❯</button>
+            </div>
+          </div>
+
+          <p class="project-description">
+            Inspired by the damage caused by recent wildfires in California, we
+            developed and presented a package to predict wildfire spread and
+            position firefighting resources to maintain integrity of vital
+            evacuation routes for as long as possible, all in 24 hours. We
+            overcame a lack of sufficient wildfire spread data by simulating
+            wildfire spread influenced by factors such as terrain slope, canopy,
+            and weather conditions. Additionally, we presented the ability to
+            transform road networks into a weighted graph, allowing for
+            multi-agent allocation without the need for intercommunication.
+          </p>
+
+          <div class="tech-pills">
+            <span class="pill">React</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">Diffusion</span>
+            <span class="pill">MLP</span>
+            <span class="pill">Multi-Agent Planning</span>
+          </div>
+        </div>
+
+        <div class="project-tile">
+          <div class="project-header">
+            <h3>Tartan Hacks 2024: Sky Shepherd</h3>
+            <div class="project-date">February 2024</div>
+          </div>
+
+          <div class="project-image-container">
+            <img class="project-image" src="skyshepherd.gif" />
+          </div>
+
+          <p class="project-description">
+            Within 24 hours, we developed and presented a package to provide
+            hyperlocal dynamic navigation instructions to users of outdoor
+            venues (think conferences, festivals, concerts, etc.) using
+            drone-based aerial crowd detection and mapping, allowing drones to
+            take off within seconds of inputting the address of the venue. We
+            overcame vision challenges, showing that crowds can be accurately
+            estimated by detecting the members that comprise their exterior and
+            tracing the polygon they create. Additionally, we presented the
+            ability to map drone footage onto satellite imagery, allowing us to
+            map people and crowds picked up by drones onto larger maps and
+            providing a dynamic cost map for search.
+          </p>
+
+          <div class="tech-pills">
+            <span class="pill">OpenCV</span>
+            <span class="pill">YOLO</span>
+            <span class="pill">A*</span>
+            <span class="pill">Python</span>
+          </div>
+        </div>
+      </div>
       <h2 id="education">Coursework</h2>
       <div class="education-section">
         <div class="semester-item">
@@ -611,10 +687,6 @@
         }
       }
 
-      const sections = document.querySelectorAll(".right-column > h2[id]");
-      const links = document.querySelectorAll(".quick-navigate a");
-      const rightColumn = document.querySelector(".right-column");
-
       function updateActiveLink() {
         const scrollTop = rightColumn.scrollTop;
         let activeSection = null;
@@ -639,30 +711,224 @@
         });
       }
 
-      rightColumn.addEventListener("scroll", updateActiveLink);
+      function handlePDFNavigation() {
+        const prevPage = document.getElementById("prev-page");
+        const nextPage = document.getElementById("next-page");
+        const currentPage = document.getElementById("current-page");
+        const totalPages = document.getElementById("total-pages");
+        const pdfContainer = document.querySelector(".project-pdf-container");
 
-      links.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
+        if (prevPage && nextPage) {
+          prevPage.addEventListener("click", function () {
+            const currentValue = parseInt(currentPage.textContent, 10);
+            if (currentValue > 1) {
+              currentPage.textContent = currentValue - 1;
 
-          const href = link.getAttribute("href");
-          const targetId = href.slice(1);
-          const targetEl = document.getElementById(targetId);
+              try {
+                const pdfViewer = pdfContainer.querySelector(".pdf-viewer");
+                if (pdfViewer && pdfViewer.contentWindow) {
+                  pdfViewer.contentWindow.postMessage(
+                    {
+                      action: "previousPage",
+                    },
+                    "*"
+                  );
 
-          if (targetEl) {
-            links.forEach((l) => l.classList.remove("active"));
-            link.classList.add("active");
+                  if (
+                    pdfViewer.contentDocument &&
+                    pdfViewer.contentDocument.getElementById("previous")
+                  ) {
+                    pdfViewer.contentDocument
+                      .getElementById("previous")
+                      .click();
+                  }
+                }
+                const pdfObject = pdfContainer.querySelector("object");
+                const pdfUrl = pdfObject.getAttribute("data");
+                if (pdfUrl && !pdfUrl.includes("#page=")) {
+                  pdfObject.setAttribute(
+                    "data",
+                    pdfUrl + "#page=" + (currentValue - 1)
+                  );
+                } else if (pdfUrl && pdfUrl.includes("#page=")) {
+                  pdfObject.setAttribute(
+                    "data",
+                    pdfUrl.split("#page=")[0] + "#page=" + (currentValue - 1)
+                  );
+                }
+              } catch (e) {
+                console.log("PDF navigation error:", e);
+              }
+            }
+          });
 
-            const sectionTop = targetEl.offsetTop - rightColumn.offsetTop;
-            rightColumn.scrollTo({
-              top: sectionTop,
-              behavior: "smooth",
-            });
-          }
+          nextPage.addEventListener("click", function () {
+            const currentValue = parseInt(currentPage.textContent, 10);
+            const totalValue = parseInt(totalPages.textContent, 10);
+            if (currentValue < totalValue) {
+              currentPage.textContent = currentValue + 1;
+
+              try {
+                const pdfViewer = pdfContainer.querySelector(".pdf-viewer");
+                if (pdfViewer && pdfViewer.contentWindow) {
+                  pdfViewer.contentWindow.postMessage(
+                    {
+                      action: "nextPage",
+                    },
+                    "*"
+                  );
+
+                  if (
+                    pdfViewer.contentDocument &&
+                    pdfViewer.contentDocument.getElementById("next")
+                  ) {
+                    pdfViewer.contentDocument.getElementById("next").click();
+                  }
+                }
+                const pdfObject = pdfContainer.querySelector("object");
+                const pdfUrl = pdfObject.getAttribute("data");
+                if (pdfUrl && !pdfUrl.includes("#page=")) {
+                  pdfObject.setAttribute(
+                    "data",
+                    pdfUrl + "#page=" + (currentValue + 1)
+                  );
+                } else if (pdfUrl && pdfUrl.includes("#page=")) {
+                  pdfObject.setAttribute(
+                    "data",
+                    pdfUrl.split("#page=")[0] + "#page=" + (currentValue + 1)
+                  );
+                }
+              } catch (e) {
+                console.log("PDF navigation error:", e);
+              }
+            }
+          });
+        }
+        const prevPage2 = document.getElementById("prev-page-2");
+        const nextPage2 = document.getElementById("next-page-2");
+        const currentPage2 = document.getElementById("current-page-2");
+        const totalPages2 = document.getElementById("total-pages-2");
+        const pdfContainer2 = document.querySelectorAll(
+          ".project-pdf-container"
+        )[1];
+
+        if (prevPage2 && nextPage2) {
+          prevPage2.addEventListener("click", function () {
+            const currentValue = parseInt(currentPage2.textContent, 10);
+            if (currentValue > 1) {
+              currentPage2.textContent = currentValue - 1;
+              try {
+                const pdfViewer = pdfContainer2.querySelector(".pdf-viewer");
+                if (pdfViewer && pdfViewer.contentWindow) {
+                  pdfViewer.contentWindow.postMessage(
+                    {
+                      action: "previousPage",
+                    },
+                    "*"
+                  );
+                  if (
+                    pdfViewer.contentDocument &&
+                    pdfViewer.contentDocument.getElementById("previous")
+                  ) {
+                    pdfViewer.contentDocument
+                      .getElementById("previous")
+                      .click();
+                  }
+                }
+                const pdfObject = pdfContainer2.querySelector("object");
+                const pdfUrl = pdfObject.getAttribute("data");
+                if (pdfUrl && !pdfUrl.includes("#page=")) {
+                  pdfObject.setAttribute(
+                    "data",
+                    pdfUrl + "#page=" + (currentValue - 1)
+                  );
+                } else if (pdfUrl && pdfUrl.includes("#page=")) {
+                  pdfObject.setAttribute(
+                    "data",
+                    pdfUrl.split("#page=")[0] + "#page=" + (currentValue - 1)
+                  );
+                }
+              } catch (e) {
+                console.log("PDF navigation error:", e);
+              }
+            }
+          });
+
+          nextPage2.addEventListener("click", function () {
+            const currentValue = parseInt(currentPage2.textContent, 10);
+            const totalValue = parseInt(totalPages2.textContent, 10);
+            if (currentValue < totalValue) {
+              currentPage2.textContent = currentValue + 1;
+              try {
+                const pdfViewer = pdfContainer2.querySelector(".pdf-viewer");
+                if (pdfViewer && pdfViewer.contentWindow) {
+                  pdfViewer.contentWindow.postMessage(
+                    {
+                      action: "nextPage",
+                    },
+                    "*"
+                  );
+
+                  if (
+                    pdfViewer.contentDocument &&
+                    pdfViewer.contentDocument.getElementById("next")
+                  ) {
+                    pdfViewer.contentDocument.getElementById("next").click();
+                  }
+                }
+
+                const pdfObject = pdfContainer2.querySelector("object");
+                const pdfUrl = pdfObject.getAttribute("data");
+                if (pdfUrl && !pdfUrl.includes("#page=")) {
+                  pdfObject.setAttribute(
+                    "data",
+                    pdfUrl + "#page=" + (currentValue + 1)
+                  );
+                } else if (pdfUrl && pdfUrl.includes("#page=")) {
+                  pdfObject.setAttribute(
+                    "data",
+                    pdfUrl.split("#page=")[0] + "#page=" + (currentValue + 1)
+                  );
+                }
+              } catch (e) {
+                console.log("PDF navigation error:", e);
+              }
+            }
+          });
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        window.sections = document.querySelectorAll(".right-column > h2[id]");
+        window.links = document.querySelectorAll(".quick-navigate a");
+        window.rightColumn = document.querySelector(".right-column");
+
+        rightColumn.addEventListener("scroll", updateActiveLink);
+
+        links.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const href = link.getAttribute("href");
+            const targetId = href.slice(1);
+            const targetEl = document.getElementById(targetId);
+
+            if (targetEl) {
+              links.forEach((l) => l.classList.remove("active"));
+              link.classList.add("active");
+
+              const sectionTop = targetEl.offsetTop - rightColumn.offsetTop;
+              rightColumn.scrollTo({
+                top: sectionTop,
+                behavior: "smooth",
+              });
+            }
+          });
         });
-      });
 
-      updateActiveLink();
+        handlePDFNavigation();
+        updateActiveLink();
+      });
     </script>
   </body>
 </html>
