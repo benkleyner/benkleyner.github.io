@@ -527,7 +527,7 @@ textarea:focus {
 }
 
 .semester-content.expanded {
-  max-height: 1000px;
+  max-height: 2000px;
   transition: max-height 0.6s ease-in;
   -webkit-transition: max-height 0.6s ease-in;
   -moz-transition: max-height 0.6s ease-in;
@@ -588,14 +588,14 @@ textarea:focus {
 }
 
 .course-credits {
-  color: var(--subtext);
+  color: var(--peach);
   font-size: 0.9rem;
   white-space: nowrap;
 }
 
 .course-description {
   font-size: 0.95rem;
-  color: var(--subtext);
+  color: var(--blue);
   margin-top: 0.3rem;
   padding-left: 2rem;
   display: block;
