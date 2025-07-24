@@ -1,0 +1,20 @@
+[
+  {
+    "company": "Amazon Web Services - AWS Artifact",
+    "companyUrl": "https://www.amazon.com/aws",
+    "role": "Software Development Engineer Intern",
+    "date": "May 2025 - August 2025",
+    "description": "Incoming internship on the AWS Artifact team.",
+    "tech": ["AWS", "Java", "Python", "TypeScript", "Cloud Computing", "Amazon Bedrock"],
+    "logo": "/experience/aws.svg"
+  },
+  {
+    "company": "insitro - LIMS Team",
+    "companyUrl": "https://www.insitro.com/",
+    "role": "Software Engineer Intern",
+    "date": "May 2024 - August 2024",
+    "description": "Worked on the laboratory information management system (LIMS) team.",
+    "tech": ["Python", "Django", "React", "TypeScript", "PostgreSQL", "Laboratory Software"],
+    "logo": "/experience/logo-insitro.png"
+  }
+] 

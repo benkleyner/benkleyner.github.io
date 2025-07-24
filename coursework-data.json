@@ -1,0 +1,152 @@
+[
+  {
+    "semester": "Spring 2025",
+    "gpa": 3.8,
+    "courses": [
+      {
+        "code": "15-213",
+        "name": "Introduction to Computer Systems",
+        "credits": 12,
+        "description": "This course provides a programmer's view of how computer systems execute programs, store information, and communicate. It enables students to become more effective programmers, especially in dealing with issues of performance, portability and robustness. It also serves as a foundation for courses on compilers, networks, operating systems, and computer architecture, where a deeper understanding of systems-level issues is required. Topics covered include: machine-level code and its generation by optimizing compilers, performance evaluation and optimization, computer arithmetic, memory organization and management, networking technology and protocols, and supporting concurrent computation."
+      },
+      {
+        "code": "15-451",
+        "name": "Algorithm Design and Analysis",
+        "credits": 12,
+        "description": "This course is about the design and analysis of algorithms. We study specific algorithms for a variety of problems, as well as general design and analysis techniques. Specific topics include searching, sorting, algorithms for graph problems, efficient data structures, lower bounds and NP-completeness. A variety of other topics may be covered at the discretion of the instructor. These include parallel algorithms, randomized algorithms, geometric algorithms, low level techniques for efficient programming, cryptography, and cryptographic protocols."
+      },
+      {
+        "code": "10-315",
+        "name": "Machine Learning",
+        "credits": 12,
+        "description": "This undergraduate course provides a one-semester introduction to the core concepts, algorithms, and applications of machine learning, tailored for SCS majors. Students will learn to choose and apply supervised learning methods for classification (e.g., naive Bayes, perceptron, SVM, logistic regression) and regression (e.g., linear and ridge regression), as well as unsupervised techniques such as clustering and dimensionality reduction. The course emphasizes foundational mathematics, including probability, linear algebra, and calculus, to derive and understand machine learning algorithms. Key principles like model selection, overfitting, cross-validation, and regularization are covered. Students will implement algorithms and analyze results from real and synthetic datasets."
+      },
+      {
+        "code": "15-591",
+        "name": "Independent Study in Computer Science",
+        "credits": 12,
+        "description": "The School of Computer Science offers Independent Study courses, which allow motivated students to work on projects under the supervision of a faculty advisor while receiving academic credit. Independent studies are usually one semester in duration and require prior approval from the faculty member and the School of Computer Science."
+      },
+      {
+        "code": "76-270",
+        "name": "Writing for the Professions",
+        "credits": 9,
+        "description": "Strong writing and communication skills are expected across the professions, from computer science to data science, from healthcare to engineering. This course is designed to help students in these and other professions build skills and confidence in written, oral, and team communication. Our guiding, research-based premise for the course is that readers in professional contexts are busy, actively look for the information they need, and deserve to get that information in a clear and accessible way. In this course, you will strengthen your writing and communication skills through a series of projects that put real readers and users of documents at the center your writing process. Through genres like job application packages, proposals, presentations of complex information for non-experts, and team-based technical documentation, you will practice the skills you will need as you move from student writer to professional."
+      }
+    ]
+  },
+  {
+    "semester": "Fall 2024",
+    "gpa": 3.8,
+    "courses": [
+      {
+        "code": "15-210",
+        "name": "Parallel and Sequential Data Structures and Algorithms",
+        "credits": 12,
+        "description": "Teaches students about how to design, analyze, and program algorithms and data structures. The course emphasizes parallel algorithms and analysis, and how sequential algorithms can be considered a special case. The course goes into more theoretical content on algorithm analysis than 15-122 and 15-150 while still including a significant programming component and covering a variety of practical applications such as problems in data analysis, graphics, text processing, and the computational sciences."
+      },
+      {
+        "code": "15-259",
+        "name": "Probabiltiy and Computing",
+        "credits": 12,
+        "description": "Probability theory is indispensable in computer science today. In areas such as artificial intelligence and computer science theory, probabilistic reasoning and randomization are central. Within networks and systems, probability is used to model uncertainty and queuing latency. This course gives an introduction to probability as it is used in computer science theory and practice, drawing on applications and current research developments as motivation. The course has 3 parts: Part I is an introduction to probability, including discrete and continuous random variables, heavy tails, simulation, Laplace transforms, z-transforms, and applications of generating functions."
+      },
+      {
+        "code": "02-414",
+        "name": "String Algorithms",
+        "credits": 12,
+        "description": "Provides an in-depth look at modern algorithms used to process string data, particularly those relevant to genomics. The course will cover the design and analysis of efficient algorithms for processing enormous amounts of collections of strings. Topics will include string search; inexact matching; string compression; string data structures such as suffix trees, suffix arrays, and searchable compressed indices; and the Borrows-Wheeler transform. Applications of these techniques in genomics will be presented, including genome assembly, transcript assembly, whole-genome alignment, gene expression quantification, read mapping, and search of large sequence databases."
+      },
+      {
+        "code": "85-211",
+        "name": "Cognitive Psychology",
+        "credits": 9,
+        "description": "This course focuses on the fascinating way that the brain processes the world and allows us to interact with it. Aside from covering the major topics in cognitive psychology (language, memory, visual processing, attention and cognitive control), it includes an introduction to some of the most recent approaches to studying human cognition. The course is set up to highlight the connection between cognitive studies and skills in various majors such as computer science, math, statistics, and medicine. It is also structured to foster the necessary skills for the critical analysis of complex problems."
+      },
+      {
+        "code": "80-261",
+        "name": "Experience, Reason & Truth",
+        "credits": 9,
+        "description": "A central issue in Western philosophy has been whether reason or experience (or some of both?) provides the foundations for human knowledge. This course explores that question by looking at various 'empiricist' vs. 'rationalist' debates from the 17th century to the present day. We will focus on the problems encountered in trying to give an adequate account of the our knowledge of the external world, the structure of our minds, and the nature and limitations of human knowledge. The scope of our investigation will extend to the nature of mathematical knowledge, to 'thought experiments' in both science and philosophy, and to 'nativism' vs. 'empiricism' issues in contemporary cognitive science and moral theory. The course has two main goals: (1) to study key metaphysical and epistemological issues surrounding the nature of human knowledge and (2) to help improve our analytical and critical skills by extracting and evaluating various relevant philosophical arguments."
+      }
+    ]
+  },
+  {
+    "semester": "Spring 2024",
+    "gpa": 3.8,
+    "courses": [
+      {
+        "code": "15-251",
+        "name": "Great Ideas in Theoretical Computer Science",
+        "credits": 12,
+        "description": "This course is about how to use theoretical ideas to formulate and solve problems in computer science. It integrates mathematical material with general problem solving techniques and computer science applications. Examples are drawn from algorithms, complexity theory, game theory, probability theory, graph theory, automata theory, algebra, cryptography, and combinatorics. Assignments involve both mathematical proofs and programming."
+      },
+      {
+        "code": "15-150",
+        "name": "Principles of Functional Programming",
+        "credits": 12,
+        "description": "An introduction to programming based on a 'functional' model of computation. The functional model is a natural generalization of algebra in which programs are formulas that describe the output of a computation in terms of its inputs---that is, as a function. But instead of being confined to real- or complex-valued functions, the functional model extends the algebraic view to a very rich class of data types, including not only aggregates built up from other types, but also functions themselves as values. This course is an introduction to programming that is focused on the central concepts of function and type. One major theme is the interplay between inductive types, which are built up incrementally; recursive functions, which compute over inductive types by decomposition; and proof by structural induction, which is used to prove the correctness and time complexity of a recursive function. Another major theme is the role of types in structuring large programs into separate modules, and the integration of imperative programming through the introduction of data types whose values may be altered during computation."
+      },
+      {
+        "code": "02-251",
+        "name": "Great Ideas in Computational Biology",
+        "credits": 12,
+        "description": "This 12-unit course provides an introduction to many of the great ideas that have formed the foundation for the recent transformation of life sciences into a fully-fledged computational discipline. Extracting biological understanding from both large and small data sets now requires the use and design of novel algorithms, developed in the field of computational biology. This gateway course is intended as a first exposure to computational biology for first-year undergraduates in the School of Computer Science, although it is open to other computationally minded 6students who are interested in exploring the field. Students will learn fundamental algorithmic and machine learning techniques that are used in modern biological investigations, including algorithms to process string, graph, and image data. They will use these techniques to answer questions such as 'How do we reconstruct the sequence of a genome?', 'How do we infer evolutionary relationships among many species?', and 'How can we predict each gene's biological role?' on biological data. Previous exposure to molecular biology is not required, as the instructors will provide introductory materials as needed. After completion of the course, students will be well equipped to tackle advanced computational challenges in biology."
+      },
+      {
+        "code": "21-266",
+        "name": "Vector Calculus for Computer Scientists",
+        "credits": 10,
+        "description": "This course is an introduction to vector calculus making use of techniques from linear algebra. Topics covered include scalar-valued and vector-valued functions, conic sections and quadric surfaces, new coordinate systems, partial derivatives, tangent planes, the Jacobian matrix, the chain rule, gradient, divergence, curl, the Hessian matrix, linear and quadratic approximation, local and global extrema, Lagrange multipliers, multiple integration, parametrised curves, line integrals, conservative vector fields, parametrised surfaces, surface integrals, Green's theorem, Stokes's theorem and Gauss's theorem."
+      },
+      {
+        "code": "09-105",
+        "name": "Introduction to Modern Chemistry I",
+        "credits": 10,
+        "description": "This course begins with a very brief survey of some fundamental principles of chemistry and a presentation of chemically interesting applications and sophisticated problems. These will form the basis for introducing the relationships between the structure of molecules and their chemical properties and behavior. The subject matter will include principles of atomic structure, chemical bonding, intermolecular interactions and molecular structures of organic and inorganic compounds including some transition metal complexes. Relevant examples will be drawn from such areas as environmental, materials, and biological chemistry."
+      }
+    ]
+  },
+  {
+    "semester": "Fall 2023",
+    "gpa": 4.0,
+    "courses": [
+      {
+        "code": "15-122",
+        "name": "Principles of Imperative Computation",
+        "credits": 12,
+        "description": "For students with a basic understanding of programming (variables, expressions, loops, arrays, functions). Teaches imperative programming and methods for ensuring the correctness of programs. Students will learn the process and concepts needed to go from high-level descriptions of algorithms to correct imperative implementations, with specific application to basic data structures and algorithms. Much of the course will be conducted in a subset of C amenable to verification, with a transition to full C near the end."
+      },
+      {
+        "code": "15-151",
+        "name": "Mathematical Foundations for Computer Science",
+        "credits": 12,
+        "description": "This course is offered to incoming Computer Science freshmen and focuses on the fundamental concepts in Mathematics that are of particular interest to Computer Science such as logic, sets,induction, functions, and combinatorics. These topics are used as a context in which students learn to formalize arguments using the methods of mathematical proof. This course uses experimentation and collaboration as ways to gain better understanding of the material."
+      },
+      {
+        "code": "21-241",
+        "name": "Matrices & Linear Transformations",
+        "credits": 11,
+        "description": "A first course in linear algebra intended for scientists, engineers, mathematicians and computer scientists. Students will be required to write some straightforward proofs. Topics to be covered: complex numbers, real and complex vectors and matrices, rowspace and columnspace of a matrix, rank and nullity, solving linear systems by row reduction of a matrix, inverse matrices and determinants, change of basis, linear transformations, inner product of vectors, orthonormal bases and the Gram-Schmidt process, eigenvectors and eigenvalues, diagonalization of a matrix, symmetric and orthogonal matrices."
+      },
+      {
+        "code": "76-101",
+        "name": "Interpretation and Argument",
+        "credits": 9,
+        "description": "76-101 introduces first-year students to an advanced, inductive process for writing an argument from sources."
+      },
+      {
+        "code": "07-128",
+        "name": "Freshman Immigration Course",
+        "credits": 3,
+        "description": "The First Year Immigration Course is taken by first-semester School of Computer Science students on the Pittsburgh campus. The course is designed to acquaint incoming students with computer science at CMU. Talks range from historical perspectives in the field to descriptions of the cutting edge research being conducted in the School of Computer Science."
+      },
+      {
+        "code": "07-131",
+        "name": "Great Practical Ideas in Computer Science",
+        "credits": 2,
+        "description": "Throughout your education as a Computer Scientist at Carnegie Mellon, you will take courses on programming, theoretical ideas, logic, systems, etc. As you progress, you will be expected to pick up the so-called 'tools of the trade.' This course is intended to help you learn what you need to know in a friendly, low-stress, high-support way. We will discuss UNIX, LaTeX, debugging and many other essential tools."
+      }
+    ]
+  }
+] 

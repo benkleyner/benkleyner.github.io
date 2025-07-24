@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Tartan Hacks 2025: EmBrnt",
+    "date": "February 2025",
+    "pdf": "/embrnt.pdf",
+    "description": "Inspired by the damage caused by recent wildfires in California, we developed and presented a package to predict wildfire spread and position firefighting resources to maintain integrity of vital evacuation routes for as long as possible, all in 24 hours. We overcame a lack of sufficient wildfire spread data by simulating wildfire spread influenced by factors such as terrain slope, canopy, and weather conditions. Additionally, we presented the ability to transform road networks into a weighted graph, allowing for multi-agent allocation without the need for intercommunication.",
+    "tech": ["React", "TypeScript", "Diffusion", "MLP", "Multi-Agent Planning"]
+  },
+  {
+    "title": "Tartan Hacks 2024: Sky Shepherd",
+    "date": "February 2024",
+    "image": "/skyshepherd.gif",
+    "description": "Within 24 hours, we developed and presented a package to provide hyperlocal dynamic navigation instructions to users of outdoor venues (think conferences, festivals, concerts, etc.) using drone-based aerial crowd detection and mapping, allowing drones to take off within seconds of inputting the address of the venue. We overcame vision challenges, showing that crowds can be accurately estimated by detecting the members that comprise their exterior and tracing the polygon they create. Additionally, we presented the ability to map drone footage onto satellite imagery, allowing us to map people and crowds picked up by drones onto larger maps and providing a dynamic cost map for search.",
+    "tech": ["OpenCV", "YOLO", "A*", "Python"]
+  }
+] 
